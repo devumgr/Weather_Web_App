@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewpjort" content="width=device-width, initial-scale=1">
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>My Weather APP</title>
+  </head>
+  <body>
+    <div
+  class="bg-image"
+  style="
+    background-image: url('noaa-ZVhm6rEKEX8-unsplash.jpg');
+    background-size: 100% 100%;
+  "
+>
+  <!-- Navigation Tab -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Weather App</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="country.html">Country and Capitals</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--Content page-->
+      <div class="container">
+
+        <!--Search Button-->
+        <form class="d-flex">
+          <input id ="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+        </form>
+
+        <h1 class="my-4 text-center">Weather for <span id ="cityName"></span></h1>
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-danger">
+                  <div class="card-header py-3 text-white bg-info text-dark">
+                    <h4 class="my-0 fw-normal">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-thermometer" viewBox="0 0 16 16">
+                        <path d="M8 14a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                        <path d="M8 0a2.5 2.5 0 0 0-2.5 2.5v7.55a3.5 3.5 0 1 0 5 0V2.5A2.5 2.5 0 0 0 8 0zM6.5 2.5a1.5 1.5 0 1 1 3 0v7.987l.167.15a2.5 2.5 0 1 1-3.333 0l.166-.15V2.5z"/>
+                      </svg>
+                      Temperatures</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title card-title"><span id="temp2"></span><small class="text-muted fw-light"></small></i><span>&#8451;</span></small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                    
+                      <li>Temperature is <span id = "temp"></span> </li>
+                      <li>Min Temperature is <span id = "min_temp"></span> </li>
+                      <li>Max Temperature is <span id = "max_temp"></span> </li>
+                    </ul>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-danger">
+                  <div class="card-header py-3 text-white bg-info text-dark">
+                    <h4 class="my-0 fw-normal">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moisture" viewBox="0 0 16 16">
+                        <path d="M13.5 0a.5.5 0 0 0 0 1H15v2.75h-.5a.5.5 0 0 0 0 1h.5V7.5h-1.5a.5.5 0 0 0 0 1H15v2.75h-.5a.5.5 0 0 0 0 1h.5V15h-1.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 .5-.5V.5a.5.5 0 0 0-.5-.5h-2zM7 1.5l.364-.343a.5.5 0 0 0-.728 0l-.002.002-.006.007-.022.023-.08.088a28.458 28.458 0 0 0-1.274 1.517c-.769.983-1.714 2.325-2.385 3.727C2.368 7.564 2 8.682 2 9.733 2 12.614 4.212 15 7 15s5-2.386 5-5.267c0-1.05-.368-2.169-.867-3.212-.671-1.402-1.616-2.744-2.385-3.727a28.458 28.458 0 0 0-1.354-1.605l-.022-.023-.006-.007-.002-.001L7 1.5zm0 0-.364-.343L7 1.5zm-.016.766L7 2.247l.016.019c.24.274.572.667.944 1.144.611.781 1.32 1.776 1.901 2.827H4.14c.58-1.051 1.29-2.046 1.9-2.827.373-.477.706-.87.945-1.144zM3 9.733c0-.755.244-1.612.638-2.496h6.724c.395.884.638 1.741.638 2.496C11 12.117 9.182 14 7 14s-4-1.883-4-4.267z"/>
+                      </svg>
+                      Humidity Info </h4>
+                  </div>
+
+                  <div class="card-body">
+                    <h1 class="card-title card-title"><span id = "humidity2"></span><small class="text-muted fw-light"> %</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Humidity is <span id = "humidity"></span> </li>
+                      <li>Feels Like <span id = "feels_like"></span> </li>
+                      
+                    </ul>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-danger">
+                  <div class="card-header py-3 text-white bg-info text-dark">
+                    <h4 class="my-0 fw-normal">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wind" viewBox="0 0 16 16">
+                        <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5zm-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2zM0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5z"/>
+                      </svg>
+                      Sun & Wind Info</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"><span id = "wind_speed2"></span><small class="text-muted fw-light"> Km/hr</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                   
+                        <li>Wind Degree is <span id = "wind_degrees"></span> </li>
+                        <li>Wind Speed is <span id = "wind_speed"></span> </li>
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br>
+            <!-- Sunrise Sunset BAR -->
+            <div class="row-cols-md-3 offset-md-4">
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-danger">
+                  <div class="card-header py-3 text-white bg-info text-dark">
+                    <h4 class="my-0 fw-normal">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-sun" viewBox="0 0 16 16">
+                        <path d="M7 8a3.5 3.5 0 0 1 3.5 3.555.5.5 0 0 0 .624.492A1.503 1.503 0 0 1 13 13.5a1.5 1.5 0 0 1-1.5 1.5H3a2 2 0 1 1 .1-3.998.5.5 0 0 0 .51-.375A3.502 3.502 0 0 1 7 8zm4.473 3a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5h-.027z"/>
+                        <path d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0v-1zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708l.707-.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708l-.708-.707zm1.734 3.374a2 2 0 1 1 3.296 2.198c.199.281.372.582.516.898a3 3 0 1 0-4.84-3.225c.352.011.696.055 1.028.129zm4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377zM14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>
+                      </svg>
+                      Sunrise & Sunset</h4>
+                  </div>
+  
+                  <div class="card-body">
+                    <h1 class="card-text-center"><span></span><small class="text-muted fw-light"> </small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Sunrise Time is :<span id = "sunrise"></span> </li>
+                      <li>Sunset Time is :<span id = "sunset"></span> </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            </div>
+          </main>
+          
+          <footer class="bg-dark text-center text-white">
+           
+            
+          
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2022 :
+              <a class="text-white" href="https://mdbootstrap.com/">Weather Application</a>
+            </div>
+            <!-- Copyright -->
+          </footer>
+    </div>
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>  
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
